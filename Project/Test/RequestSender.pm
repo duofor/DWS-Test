@@ -1,4 +1,4 @@
-package Test::Controller;
+package Test::RequestSender;
 
 use Readonly;
 use Data::Dumper;
@@ -8,11 +8,20 @@ use lib qw(.);
 use Test::RestApi;
 use Util::JSON;
 
-my Readonly $url = 'http://127.0.0.1:3000/query';
+# my Readonly $url = 'http://127.0.0.1:3000/query';
+# my Readonly $url = 'http://127.0.0.1:3000/total';
+# my Readonly $url = 'http://127.0.0.1:3000/caller_id';
+my Readonly $url = 'http://127.0.0.1:3000/calls';
+
+# dates are: MM/DD/YYYY
 my $query_args = { 
     # reference => C5DA9724701EEBBA95CA2CC5617BA93E4,
-    call_date => '16/08/2016'
+    # call_date => '16/08/2016'
     # recipient => 448000000000
+    start_date => '15/08/2016',
+    end_date => '25/08/2016',
+    caller_id => 441827000000,
+    number_of_calls => 3
 };
 
 my ($response_decoded, $status_code) = send_get_request($url, $query_args);
