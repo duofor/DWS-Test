@@ -1,12 +1,12 @@
 package Util::JSON;
 
 use Moose;
-use JSON::XS;
+use Cpanel::JSON::XS;
 
 has 'json_coder' => (
     is => 'ro',
     default => sub {
-        return JSON::XS->new->utf8->pretty;
+        return Cpanel::JSON::XS->new->utf8->pretty;
     }
 );
 
