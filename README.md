@@ -48,7 +48,7 @@ Day 3: 7h
     - Fixed bugs and tested the endpoints.
     - Worked on documentation
 
-Setup: 
+    Setup: 
     cpanm Carton
     carton install
 
@@ -64,11 +64,13 @@ Setup:
         - Test output will be redirected into a new file test.txt located in your home directory.
 
 
-Server endpoint documentation:
+    Server endpoint documentation:
+
     GET /query
         - Endpoint used to retrieve individual CDR by the CDR reference.
         - For testing purposes I implemented it in such way that it is able to take any key : value pair and query the DB for it.
         -Response: the full CDR as JSON
+
     GET /total
         - Accepts start_date, end_date and type as params
         - Queries the DB for total duration of calls between start_date and end_date
@@ -82,6 +84,7 @@ Server endpoint documentation:
         - Queries the DB for all CDRs of caller_id param within the given time period
         - Allows for additional fintering based on type param 
         - Response contains all CDRs for the specific caller_id in the given period, as JSON.
+
     GET /calls
         - Accepts caller_id, start_date, end_date, number_of_calls and type as params
         - number_of_calls param represents the number of most expensive calls wanted to be returned in the response
