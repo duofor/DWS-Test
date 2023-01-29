@@ -21,10 +21,10 @@ sub servicePOST {
     $uploaded_file->move_to("$home/Data/cdr_downloaded_test.csv");
 
     if ( $self->dump_to_db() ){
-        $response = '{ "Message" : "Success" }';
+        $response = { Message => 'Success' };
         $status_code = 200;
     } else {
-        die; # handle with some message?
+        die;
     }
 
     return ($response, $status_code);
@@ -47,7 +47,6 @@ sub dump_to_db {
     my $counter = 0;
 
     open (my $fh, '<', 'Data/cdr_downloaded_test.csv');
-
     while ( my $line = <$fh> ) {
         die if $counter == 0 && $line !~ /$file_head/; 
         $counter = 1;
