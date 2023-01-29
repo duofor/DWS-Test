@@ -130,7 +130,7 @@ sub most_expensive_calls {
         "FROM cdr " .
         "WHERE 1 = 1 " .
         join "\n", @where_clause, .
-        " ORDER BY cost ASC";
+        " ORDER BY cost DESC";
 
     print $sql;
     print join ',', @query_params;
