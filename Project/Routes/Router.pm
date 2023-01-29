@@ -41,4 +41,37 @@ sub serviceGET {
     die "No implementation of method serviceGET was found in " . ref $self;
 }
 
+=pod 
+
+=head1 NAME
+
+Routes::Router
+
+=head1 DESCRIPTION
+
+Serves as base class for each of the defined routes in Routes::Controller 
+
+=head1 Attributes
+
+=over 4
+
+=head1 Methods
+
+=over 4
+
+=item * process_request
+
+Calls service<METHOD>(ex: serviceGET servicePOST) which handles the request
+Has a failover 404 error message
+Can be overriden in childs
+
+=item * serviceGET
+
+Default method for GET request.
+Must be overriden in child class
+
+=back
+
+=cut
+
 1;

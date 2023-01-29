@@ -48,4 +48,31 @@ sub serviceGET {
     return ($response, $status_code);
 }
 
+=pod 
+
+=head1 NAME
+
+Routes::Controller::TotalCallDuration
+
+=head1 DESCRIPTION
+
+Extends Routes::Router and implements serviceGET method
+
+=head1 Attributes
+
+=over 4
+
+=head1 Methods
+
+=over 4
+
+=item * serviceGET
+
+Defined route GET request behaviour.
+Processes the request and returns the response as perl data structure and the response_code
+
+=back
+
+=cut
+
 1;
