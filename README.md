@@ -1,5 +1,6 @@
 
-    Day 1 - 4h: 
+    Day 1 - 4h:
+        - Booted up a simple agile board in Trello
         - Spent 30minunutes reading through the given PDF and coming up with some core stuff that needs to be implemented first. 
         - Spent another 30minutes fixing path issues
         - Decided to use carton to handle package dependencies
