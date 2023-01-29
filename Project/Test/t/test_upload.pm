@@ -39,13 +39,9 @@ sub send_post_request {
 
     my $status_code = $response->code();
 
-    print Dumper $response->content;
-
     my $jscoder = Util::JSON->new();
     my $response_decoded = $jscoder->json_coder()->decode( $response->content() ) 
         or die "bad response: cannot decode" . $response->content();
-
-    print Dumper $response_decoded;
 
     return ( $response_decoded, $status_code );
 }
