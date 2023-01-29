@@ -26,6 +26,7 @@ Day 2: 4.5h
         -> TechDebt: Move queries out of Database.pm. This module should not hold queries.
         
 TODO: 
+    - move request code into a separate package ??
     - Large file uploads
     - Handle unhappy flow in all endpoints: Ex: missing fields -> would love to have a custom error
     - Move hardcoded responses into jsons ?

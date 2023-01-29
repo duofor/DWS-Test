@@ -1,4 +1,4 @@
-package Router;
+package CdrApp;
 
 use Moose;
 use Mojolicious::Lite -signatures;
