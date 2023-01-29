@@ -11,6 +11,7 @@ push app->routes->namespaces->@*, 'Routes::Controller';
 (get '/total')->to('TotalCallDuration#process_request');
 (get '/caller_id')->to('CallerID#process_request');
 (get '/calls')->to('GetCalls#process_request');
+(post '/upload')->to('Upload#process_request');
 
 app->start('daemon');
 

@@ -41,6 +41,12 @@ sub serviceGET {
     die "No implementation of method serviceGET was found in " . ref $self;
 }
 
+sub servicePOST {
+    my ($self, $params) = @_;
+
+    die "No implementation of method servicePOST was found in " . ref $self;
+}
+
 =pod 
 
 =head1 NAME
@@ -68,6 +74,11 @@ Can be overriden in childs
 =item * serviceGET
 
 Default method for GET request.
+Must be overriden in child class
+
+=item * servicePOST
+
+Default method for POST request.
 Must be overriden in child class
 
 =back
