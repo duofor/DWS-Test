@@ -153,4 +153,46 @@ sub most_expensive_calls {
     return \@result;
 }
 
+=pod 
+
+=head1 NAME
+
+Util::Database
+
+=head1 DESCRIPTION
+
+Database interactions
+
+=head1 Attributes
+
+=item * dbh
+
+Serves a DBI connection.
+
+=over 4
+
+=head1 Methods
+
+=item * exec_select
+
+Query specific to /query endpoint
+
+=item * total_duration_of_calls_in_period
+
+Query specific to /totals endpoint
+
+=item * caller_id
+
+Query specific to /caller_id endpoint
+
+=item * most_expensive_calls
+
+Query specific to /calls endpoint
+
+=over 4
+
+=back
+
+=cut
+
 1;

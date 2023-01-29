@@ -10,4 +10,30 @@ has 'json_coder' => (
     }
 );
 
+=pod 
+
+=head1 NAME
+
+Util::JSON
+
+=head1 DESCRIPTION
+
+Module responsible for encode/decode operation on JSON files
+
+=head1 Attributes
+
+=item * json_coder
+  
+Returns a readonly instance of Cpanel::JSON::XS
+
+=over 4
+
+=head1 Methods
+
+=over 4
+
+=back
+
+=cut
+
 1;

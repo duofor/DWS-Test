@@ -33,4 +33,28 @@ sub is_time_interval_too_large {
     return 0;
 }
 
+=pod 
+
+=head1 NAME
+
+Util::Util
+
+=head1 DESCRIPTION
+
+Module storing util methods.
+
+=head1 Methods
+
+=item * is_time_interval_too_large
+
+Receives two dates as parameters.
+Calculates duration of time between the dates.
+Returns 1 if duration is greater than 1 month, 0 otherwise.
+
+=over 4
+
+=back
+
+=cut
+
 1;
