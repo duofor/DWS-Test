@@ -8,26 +8,31 @@ use Mojo::Base 'Mojolicious::Controller';
 
 use lib qw(.);
 use feature 'say';
-use Util::RestUtil;
 
 sub process_request {
 	my ($self) = @_;
 
-    my ($json_response, $status_code) = ( '', 404 );
+    my $json_response = '';
+    my $status_code = 200;
     
     eval {
         my $params = $self->req->params->to_hash;
         my $service_method = 'service' . uc $self->req->method();  
-        $json_response = $self->$service_method($params);
-        $status_code = 200;
+
+        my ($response, $code) = $self->$service_method($params);
+        $json_response = $response;
+        $status_code = $code;
     };
 	if ($@) {
 		say $@;
-		$json_response = Util::RestUtil::_get_server_error_response_json();
+		$json_response = { "Message" => "Server error", "ErrorCode" => 400 };
         $status_code = 400;
 	}
 
     $self->render( json => $json_response, status => $status_code );
+
+    print Dumper $json_response;
+    print "status: $status_code\n";
 }
 
 sub serviceGET {

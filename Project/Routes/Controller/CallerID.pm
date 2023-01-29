@@ -6,21 +6,40 @@ use Data::Dumper;
 use lib qw(.);
 use Util::Database;
 use Util::JSON;
+use Util::Util;
 
 extends 'Routes::Router';
 
 sub serviceGET {
     my ($self, $params) = @_;
+    
+    my $response;
+    my $status_code;
 
-    my $database = Util::Database->new();
-    my $response = $database->caller_id( $params );
+    if ( !exists $params->{caller_id} ) {
+        $response = {
+            Message => "caller_id is missing",
+            ErrorCode => 400 
+        };
+        $status_code = 400;
 
-    my $jscoder = Util::JSON->new();
-    my $json_response = $jscoder->json_coder->encode( $response );
+        return ($response, $status_code);
+    }
+
+    if ( Util::Util::is_time_interval_too_large($params->{start_date}, $params->{end_date}) ) {
+        $response = {
+            Message => "Date duration exceeds 1 month",
+            ErrorCode => 400 
+        };
+        $status_code = 400;
+
+    } else {
+        my $database = Util::Database->new();
+        $response = $database->caller_id( $params );
+        $status_code = 200;
+    }
         
-    print Dumper $json_response;
-
-    return $json_response;
+    return ($response, $status_code);
 }
 
 1;

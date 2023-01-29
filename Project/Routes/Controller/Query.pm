@@ -14,13 +14,9 @@ sub serviceGET {
 
     my $database = Util::Database->new();
     my $response = $database->exec_select( $params );
+    my $status_code = 200;
 
-    my $jscoder = Util::JSON->new();
-    my $json_response = $jscoder->json_coder->encode( $response );
-
-    print Dumper $json_response;
-
-    return $json_response;
+    return ($response, $status_code);
 }
 
 1;
