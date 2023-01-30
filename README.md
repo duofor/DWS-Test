@@ -75,7 +75,7 @@
     GET /total
         - Accepts start_date, end_date and type as params
         - Queries the DB for total duration of calls between start_date and end_date
-        - Allows for additional fintering based on type param
+        - Allows for additional filtering based on type param
         - Response as JSON: 
             total_call_duration is the total call duration of calls between the given perioid
             total_number_of_calls is the number of calls between the given perioid
@@ -83,13 +83,13 @@
     GET /caller_id
         - Accepts caller_id, start_date, end_date and type as params
         - Queries the DB for all CDRs of caller_id param within the given time period
-        - Allows for additional fintering based on type param 
+        - Allows for additional filtering based on type param 
         - Response contains all CDRs for the specific caller_id in the given period, as JSON.
 
     GET /calls
         - Accepts caller_id, start_date, end_date, number_of_calls and type as params
         - number_of_calls param represents the number of most expensive calls wanted to be returned in the response
-        - Allows for additional fintering based on type param 
+        - Allows for additional filtering based on type param 
         - Response contains the <number_of_calls> most expensive calls(CDRs) for the specific caller_id within the given time period
 
     POST /upload
