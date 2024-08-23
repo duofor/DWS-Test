@@ -48,16 +48,3 @@
             OnSuccess - { "Message" : "Success" } , 200
             OnFail - server error, 400
 
-
-    Enhancements i would love to do:
-        - Make a simple user interface which allows for an upload and has a form which automately perform the requests.
-        - Currently using DBD::CSV as database, would love to move to an SQL server.
-        - Add unit tests for local modules.
-        - Extend error handling for mandatory/non-mandatory fields. A json schema for each endpoint would be amazing
-        - Move from Mojolicious::Lite to Mojolicious
-        - Add an aditional user agent: Mojo::UserAgent, so that server start is no longer needed(if ran locally). Helps debugging
-        - Improve RestApi module to expand request settings
-        - Add a cURL role which outputs request/responses as cURL so that its easy to share requests with other people
-        - Remove code duplication from unit tests
-        - Polish the code a little more
-        - Improve documentation
